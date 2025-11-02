@@ -1,0 +1,152 @@
+/* ربط الخط البكسلي (Press Start 2P) وخط القراءة (Cairo) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* --- الألوان المعتمدة (Palette) --- */
+:root {
+    --color-dark-bg: #1A1A1A;     /* خلفية غامقة */
+    --color-text-light: #E0E0E0;  /* نص فاتح */
+    --color-blue: #4A4A9B;        /* أزرق غامق */
+    --color-purple: #7C4DFF;      /* بنفسجي */
+    --color-green: #00A3A3;       /* أخضر غامق */
+    --color-highlight: #FFD700;   /* ذهبي للوميض والتأكيد */
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-body: 'Cairo', sans-serif;
+}
+
+/* --- التنسيق العام للجسم والخطوط --- */
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    font-family: var(--font-body); 
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    text-align: right;
+}
+
+/* التنسيق البكسلي للعناوين */
+h1, h2, h3 {
+    font-family: var(--font-pixel);
+    color: var(--color-green);
+    text-align: center;
+    text-shadow: 2px 2px var(--color-blue); /* تأثير ظل بكسلي */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem; 
+    color: var(--color-purple);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--color-blue);
+    padding-top: 50px; /* لضمان عدم اختفاء العنوان خلف الـ Nav Bar عند التنقل */
+    margin-top: -50px;
+}
+
+/* --- الهيكل العام --- */
+header {
+    background-color: rgba(40, 40, 40, 0.95);
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-bottom: 4px solid var(--color-purple); 
+    position: sticky; /* لجعل العنوان يلتصق بالأعلى أثناء التمرير */
+    top: 0;
+    z-index: 100;
+}
+
+main {
+    padding: 20px 10%;
+    min-height: 80vh;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--color-blue);
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+    font-family: var(--font-pixel);
+}
+
+/* --- شريط التنقل (NAV) - تصميم "ثلاثة خطوط" --- */
+nav {
+    background-color: #252525;
+    padding: 10px 10%;
+    border-bottom: 2px solid var(--color-green);
+    text-align: right;
+    margin-bottom: 40px;
+}
+nav h2 {
+    text-align: right;
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    text-shadow: none;
+    margin-bottom: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    background-color: #353535;
+    margin: 5px 0;
+    border-right: 4px solid var(--color-purple); /* الخطوط التدرج البنفسجية */
+    transition: background-color 0.3s;
+}
+
+nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+nav ul li:hover {
+    background-color: var(--color-blue);
+}
+
+/* --- تنسيق الفقرات (الإطارات البكسلية) --- */
+.content-box {
+    background-color: #2A2A2A;
+    padding: 25px;
+    margin: 30px 0;
+    border: 3px solid var(--color-blue);
+    box-shadow: 6px 6px 0px 0px var(--color-purple); /* تأثير إطار بكسلي بارز */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.content-box:hover {
+    transform: translateY(-5px); /* تأثير خفيف عند المرور */
+    box-shadow: 6px 10px 0px 0px var(--color-purple);
+}
+
+.intro-text p {
+    font-family: var(--font-pixel);
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* تنسيق القوائم النقطية */
+.content-box ul {
+    list-style: disc;
+    padding-right: 40px;
+}
+
+.content-box ul li {
+    background-color: transparent;
+    border-right: none;
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
